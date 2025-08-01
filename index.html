@@ -12,6 +12,12 @@
     href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
   />
   <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+    }
+
     .swiper {
       width: 100%;
       height: 100vh;
@@ -27,16 +33,28 @@
       align-items: center;
       text-align: center;
       padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .swiper-slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+      z-index: -1;
     }
 
     .swiper-slide h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
+      text-shadow: 2px 2px 10px black;
     }
 
     .swiper-slide p {
       font-size: 1.5rem;
       max-width: 600px;
+      text-shadow: 1px 1px 8px black;
     }
 
     .swiper-pagination-bullet {
@@ -47,6 +65,45 @@
     .swiper-button-prev {
       color: white;
     }
+
+    header, section, footer {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      color: #666;
+    }
   </style>
 </head>
 <body>
@@ -54,15 +111,15 @@
   <!-- Swiper Slider -->
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/1600x900/?tech')">
+      <div class="swiper-slide" style="background: #111 url('https://source.unsplash.com/1600x900/?tech') no-repeat center / cover;">
         <h1>Hi, I'm Husain 👨‍💻</h1>
         <p>Aspiring Backend Developer & Tech Explorer</p>
       </div>
-      <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/1600x900/?code')">
+      <div class="swiper-slide" style="background: #111 url('https://source.unsplash.com/1600x900/?code') no-repeat center / cover;">
         <h1>I Build Cool Stuff</h1>
         <p>From Python to Kotlin, Firebase to Docker</p>
       </div>
-      <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/1600x900/?developer')">
+      <div class="swiper-slide" style="background: #111 url('https://source.unsplash.com/1600x900/?developer') no-repeat center / cover;">
         <h1>Check My Projects</h1>
         <p>Scroll down or explore the links to see more 🚀</p>
       </div>
@@ -130,6 +187,7 @@
       loop: true,
       autoplay: {
         delay: 3000,
+        disableOnInteraction: false
       },
       pagination: {
         el: ".swiper-pagination",
