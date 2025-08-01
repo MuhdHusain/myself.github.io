@@ -5,8 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Husin Hensem | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Swiper CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+  />
+  <style>
+    .swiper {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .swiper-slide h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .swiper-slide p {
+      font-size: 1.5rem;
+      max-width: 600px;
+    }
+
+    .swiper-pagination-bullet {
+      background: white;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: white;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Swiper Slider -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/1600x900/?tech')">
+        <h1>Hi, I'm Husain 👨‍💻</h1>
+        <p>Aspiring Backend Developer & Tech Explorer</p>
+      </div>
+      <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/1600x900/?code')">
+        <h1>I Build Cool Stuff</h1>
+        <p>From Python to Kotlin, Firebase to Docker</p>
+      </div>
+      <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/1600x900/?developer')">
+        <h1>Check My Projects</h1>
+        <p>Scroll down or explore the links to see more 🚀</p>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
   <header>
     <h1>Hi, I'm Husain ! 👋</h1>
     <p>Aspiring Backend Developer & Tech Explorer</p>
@@ -29,7 +96,7 @@
     </ul>
   </section>
 
-   <section id="minigames">
+  <section id="minigames">
     <h2>My Minigames !</h2>
     <ul>
       <li><a href="https://muhdhusain.github.io/mini-game.github.io/">My Minigame Hub ! </a></li>
@@ -55,5 +122,25 @@
   <footer>
     <p>© 2025 Husin Hensem. All rights reserved.</p>
   </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      effect: "fade",
+    });
+  </script>
 </body>
 </html>
